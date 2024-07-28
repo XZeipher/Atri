@@ -1,0 +1,24 @@
+user:
+  name: Atri
+  github: XZeipher
+
+python_version: "3.9"
+
+commands:
+  build:
+    - "pip install -r requirements.txt"
+  start:
+    - "python3 -m Robot"
+
+repository:
+  url: "https://github.com/XZeipher/Atri.git"
+  branch: "main"
+
+env:
+  - "ENVIRONMENT=production"
+
+custom_commands:
+  pre_deploy:
+    - "echo Pre-deployment steps"
+  post_deploy:
+    - "echo Post-deployment steps"
