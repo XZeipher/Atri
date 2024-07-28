@@ -14,7 +14,7 @@ async def chat(ctk,message):
             auth = True
         character_id = "Km_81EXBw_-QSRq1JcAut7jqYUfGhLNcUVO9Ms5xYwQ"
         chat = await client.create_or_continue_chat(character_id)
-        message = f"Rishav: {message.text}"
-        answer = await chat.send_message(message)
+        msg = f"Rishav: {message.text}"
+        answer = await chat.send_message(msg)
         return await ctk.send_message(message.chat.id,f"{answer.src_character_name}: {answer.text}")
     return
