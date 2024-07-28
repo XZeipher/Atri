@@ -7,6 +7,7 @@ auth = False
 
 @Client.on_message(filters.me & filters.text)
 async def chat(ctk,message):
+    global auth
     if message.text.lower().startswith("atri"):
         if not auth:
             await client.authenticate_with_token(token)
