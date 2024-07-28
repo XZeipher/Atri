@@ -2,7 +2,6 @@ from Robot import *
 from pyrogram import *
 import asyncio
 
-loop = asyncio.get_event_loop()
 
 async def execute():
     print("Started")
