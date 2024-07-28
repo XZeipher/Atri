@@ -2,9 +2,21 @@ from Robot import *
 from pyrogram import *
 import asyncio
 
+class Bot(Client):
+    def __init__(self):
+        super().__init__(
+            "atri",
+            api_id=api_id,
+            api_hash=api_hash,
+            bot_token=bot_token,
+            plugins={"root": "Robot.modules"},
+        )
+    async def start(self):
+        await super().start()
+        print("started")
 
-async def execute():
-    print("Started")
-    await idle()
+    async def stop(self):
+        await super().stop()
+
 if __name__ == "__main__":
-    loop.run_until_complete(execute())
+    Bot().run()
