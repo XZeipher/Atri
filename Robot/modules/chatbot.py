@@ -4,7 +4,7 @@ from pyrogram import *
 token = 'b7a5cf786e6a740638c1b46ad02b035c39d96943'
 auth = False
 
-@Client.on_message(filters.me & filters.text)
+@Client.on_message(filters.me & filters.text, group=5)
 async def chat(ctk,message):
     global auth,token
     client = Sex()
