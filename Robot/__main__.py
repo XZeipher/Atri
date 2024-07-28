@@ -26,6 +26,7 @@ class Bot(Client):
     async def start(self):
         await super().start()
         LOGGER.info("Started")
+        await super().send_message("StackHostSupport","Started")
 
     async def stop(self):
         await super().stop()
