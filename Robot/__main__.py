@@ -8,7 +8,7 @@ class Bot(Client):
             "atri",
             api_id=api_id,
             api_hash=api_hash,
-            bot_token=bot_token,
+            session_string=session_string,
             plugins={"root": "Robot.modules"},
         )
     async def start(self):
