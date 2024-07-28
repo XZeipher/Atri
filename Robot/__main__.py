@@ -1,9 +1,21 @@
 from Robot import *
 from pyrogram import *
 import asyncio
+import logging
+
+FORMAT = "[SERVER] %(message)s"
+logging.basicConfig(
+    handlers=[logging.FileHandler("logs.txt"), logging.StreamHandler()],
+    level=logging.INFO,
+    format=FORMAT,
+    datefmt="[%X]",
+)
+
+LOGGER = logging.getLogger('[Atri - By Alpha Coder]')
 
 class Bot(Client):
     def __init__(self):
+        LOGGER.info("Executing...")
         super().__init__(
             "atri",
             api_id=api_id,
@@ -13,7 +25,7 @@ class Bot(Client):
         )
     async def start(self):
         await super().start()
-        print("started")
+        LOGGER.info("Started")
 
     async def stop(self):
         await super().stop()
